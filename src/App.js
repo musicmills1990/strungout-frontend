@@ -6,7 +6,7 @@ class App extends React.Component {
   render(){
     return (
       <div>
-        <h1>This App could change your life.</h1>
+        <h1>Welcome To StrungOut</h1>
         <Login/>
       </div>
     );
