@@ -5,25 +5,26 @@ import { login } from '../actions/currentUser.js'
 
 
 
-const Login = (props) => {
+const Login = ({loginForm, login, updateLoginForm }) => {
+
   const handleInputChange = event => {
     const { name, value } = event.target
     const updateFormInfo = {
-      ...props.loginForm,
+      ...loginForm,
       [name]: value
     }
-    props.updateLoginForm(updateFormInfo)
+    updateLoginForm(updateFormInfo)
   }
 
   const handleSubmit = event => {
     event.preventDefault()
-    login(props.loginForm)
+    login(loginForm)
   }
 
   return (
     <form onSubmit={handleSubmit}>
-      <input placeholder="email" value={props.email} name="email" type="text" onChange={handleInputChange}/>
-      <input placeholder="password" value={props.password} name="password" type="password" onChange={handleInputChange}/>
+      <input placeholder="email" value={loginForm["email"]} name="email" type="text" onChange={handleInputChange}/>
+      <input placeholder="password" value={loginForm["password"]} name="password" type="password" onChange={handleInputChange}/>
       <input type="submit" value="Log In"/>
     </form>
   )
