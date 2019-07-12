@@ -7,6 +7,7 @@ import { login } from '../actions/currentUser.js'
 
 const Login = ({loginForm, login, updateLoginForm }) => {
 
+
   const handleInputChange = event => {
     const { name, value } = event.target
     const updateFormInfo = {
@@ -23,8 +24,8 @@ const Login = ({loginForm, login, updateLoginForm }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input placeholder="email" value={loginForm["email"]} name="email" type="text" onChange={handleInputChange}/>
-      <input placeholder="password" value={loginForm["password"]} name="password" type="password" onChange={handleInputChange}/>
+      <input placeholder="email" value={loginForm.email} name="email" type="text" onChange={handleInputChange}/>
+      <input placeholder="password" value={loginForm.password} name="password" type="password" onChange={handleInputChange}/>
       <input type="submit" value="Log In"/>
     </form>
   )
