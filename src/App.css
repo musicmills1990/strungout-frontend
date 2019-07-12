@@ -31,3 +31,11 @@
     transform: rotate(360deg);
   }
 }
+
+.NavBar {
+  color: red
+}
+
+.MainContainer {
+  color: blue
+}
