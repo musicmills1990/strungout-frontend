@@ -1,3 +1,6 @@
+import { resetLoginForm } from './loginForm.js'
+import { getMyGuitars } from './myGuitars.js'
+
 export const setCurrentUser = user => {
   return {
     type: "SET_CURRENT_USER",
@@ -22,11 +25,13 @@ export const login = (credentials) => {
         body: JSON.stringify(credentials)
       })
         .then(r => r.json())
-        .then(user => {
-          if (user.errors){
-            alert(user.errors)
+        .then(userResponse => {
+          if (userResponse.errors){
+            alert(userResponse.errors)
           } else {
-            dispatch(setCurrentUser(user))
+            dispatch(setCurrentUser(userResponse.data))
+            dispatch(getMyGuitars())
+            dispatch(resetLoginForm())
           }
         })
         .catch(console.log)
@@ -44,7 +49,7 @@ export const logout = (credentials) => {
 
 export const getCurrentUser = () => {
     return dispatch => {
-      return fetch("http://localhost:3001/api/v1/getCurrentUser", {
+      return fetch("http://localhost:3001/api/v1/get_current_user", {
         credientials: 'include',
         method: "GET",
         headers: {
@@ -52,11 +57,11 @@ export const getCurrentUser = () => {
         }
       })
         .then(r => r.json())
-        .then(user => {
-          if (user.errors){
-            alert(user.errors)
+        .then(userResponse => {
+          if (userResponse.errors){
+            alert(userResponse.errors)
           } else {
-            dispatch(setCurrentUser(user))
+            dispatch(setCurrentUser(userResponse.data))
           }
         })
         .catch(console.log)
