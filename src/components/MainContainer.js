@@ -1,11 +1,11 @@
 import React from 'react'
 import MyGuitars from "./MyGuitars.js"
+import MyStringPacks from './MyStringPacks.js'
 
 const MainContainer = () => {
-  
+
   return (
     <div className="MainContainer">
-    <p>hey its the main container!</p>
     <MyGuitars/>
     </div>
   )
