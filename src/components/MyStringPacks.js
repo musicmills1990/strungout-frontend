@@ -13,7 +13,7 @@ const MyStringPacks = (props) => {
 
 const mapStateToProps = state => {
   return {
-    stringPacks: state.stringPacks
+    stringPacks: state.myStringPacks
   }
 }
 
