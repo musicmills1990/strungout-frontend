@@ -1,5 +1,7 @@
 import { resetLoginForm } from './loginForm.js'
 import { getMyGuitars } from './myGuitars.js'
+import { getMyStringPacks } from './myStringPacks.js'
+
 
 export const setCurrentUser = user => {
   return {
@@ -30,8 +32,9 @@ export const login = (credentials) => {
             alert(userResponse.errors)
           } else {
             dispatch(setCurrentUser(userResponse.data))
-            dispatch(getMyGuitars())
             dispatch(resetLoginForm())
+            dispatch(getMyGuitars())
+            dispatch(getMyStringPacks())
           }
         })
         .catch(console.log)
@@ -58,9 +61,7 @@ export const getCurrentUser = () => {
       })
         .then(r => r.json())
         .then(userResponse => {
-          if (userResponse.errors){
-            alert(userResponse.errors)
-          } else {
+          if (userResponse){
             dispatch(setCurrentUser(userResponse.data))
           }
         })
