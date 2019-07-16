@@ -4,7 +4,11 @@ const StringPackCard = (props) => {
   return (
     <div>
     <h3>My Strings:</h3>
-    <i>{props.stringPack.attributes.model}</i>
+    <p>{props.stringPack.attributes.brand}</p>
+    <p>{props.stringPack.attributes.model}</p>
+    <p>{props.stringPack.attributes.guage}</p>
+    <p>${props.stringPack.attributes.price}</p>
+
     </div>
   )
 }
