@@ -9,8 +9,12 @@ const Navbar = ({ currentUser }) => {
   return (
     <div className="NavBar">
       <h1>Welcome To StrungOut</h1>
-      {currentUser ? `Welcome ${currentUser.attributes.name}` : ""}
       {currentUser ? <Logout/> : <Login/>}
+      {currentUser ? <h1>Welcome, {currentUser.attributes.name}!</h1> : ""}
+      <button> Log In </button>
+       or 
+      <button> Sign Up </button>
+
     </div>  )
 }
 
