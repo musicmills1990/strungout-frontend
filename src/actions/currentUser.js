@@ -1,4 +1,5 @@
 import { resetLoginForm } from './loginForm.js'
+import { resetSignupForm } from './signupForm.js'
 import { getMyGuitars } from './myGuitars.js'
 import { getMyStringPacks } from './myStringPacks.js'
 
@@ -15,6 +16,35 @@ export const clearCurrentUser = () => {
   }
 
 }
+
+export const signup = (credentials) => {
+  const userInfo = {
+    user: credentials
+  }
+  return(dispatch) => {
+      return fetch('http://localhost:3001/api/v1/signup', {
+        credentials: "include",
+        method: "POST",
+        headers: {
+          "Content-Type" : "application/json"
+        },
+        body: JSON.stringify(userInfo)
+      })
+        .then(r => r.json())
+        .then(userResponse => {
+          if (userResponse.errors){
+            alert(userResponse.errors)
+          } else {
+            dispatch(setCurrentUser(userResponse.data))
+            dispatch(resetSignupForm())
+            dispatch(getMyGuitars())
+            dispatch(getMyStringPacks())
+          }
+        })
+        .catch(console.log)
+  }
+}
+
 
 export const login = (credentials) => {
   return(dispatch) => {
