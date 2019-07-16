@@ -5,6 +5,9 @@ import { getCurrentUser } from "./actions/currentUser.js"
 import NavBar from './components/NavBar.js'
 import MainContainer from './components/MainContainer.js'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
+import Login from "./components/Login.js"
+import Signup from './components/Signup.js'
+
 class App extends React.Component {
 
   componentDidMount(){
@@ -13,10 +16,14 @@ class App extends React.Component {
 
   render(){
     return (
-      <div>
-      <NavBar/>
-      <MainContainer/>
-      </div>
+      <Router>
+        <div>
+        <NavBar/>
+        <MainContainer/>
+        <Route exact path='/login' component={Login}/>
+        <Route exact path='/signup' component={Signup}/>
+        </div>
+      </Router>
     );
   }
 }
