@@ -77,6 +77,7 @@ export const logout = (credentials) => {
       credentials: "include",
        method: "DELETE"
     })
+
   }
 }
 
@@ -98,3 +99,8 @@ export const getCurrentUser = () => {
         .catch(console.log)
   }
 }
+
+// export const newGuitar = () => {
+//   return <h1>new guitar action</h1>
+//   }
+// }
