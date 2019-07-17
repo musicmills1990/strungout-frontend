@@ -9,6 +9,7 @@ import Login from "./components/Login.js"
 import Signup from './components/Signup.js'
 import  MyGuitars from './components/MyGuitars'
 import  MyStringPack from './components/MyStringPacks'
+import UserAccount from './components/UserAccount'
 
 class App extends React.Component {
 
@@ -26,6 +27,8 @@ class App extends React.Component {
         <Route exact path='/signup' component={Signup}/>
         <Route exact path='/guitars' component={MyGuitars}/>
         <Route exact path='/stringpacks' component={MyStringPack}/>
+        <Route exact path='/account' component={UserAccount}/>
+
         </div>
       </Router>
     );
