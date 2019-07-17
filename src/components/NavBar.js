@@ -16,8 +16,8 @@ const Navbar = ({ currentUser }) => {
       {currentUser ?
         <div style={{ borderBottom: '2px solid black', paddingBottom: '10px', marginBottom: '12px' }}>
         <button> <NavLink style={{ marginRight: '10px' }} to="/guitars">My Guitars</NavLink></button>
-         or
         <button> <NavLink style={{ marginRight: '10px' }} to="/stringpacks">My String Pack</NavLink></button>
+        <button> <NavLink style={{ marginRight: '10px' }} to="/account">My Account</NavLink></button>
         </div>
          :
       <div style={{ borderBottom: '2px solid black', paddingBottom: '10px', marginBottom: '12px' }}>
