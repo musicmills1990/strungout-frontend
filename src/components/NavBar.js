@@ -2,6 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import Login from "./Login.js"
 import Logout from "./Logout.js"
+import { NavLink } from 'react-router-dom';
+
 
 
 const Navbar = ({ currentUser }) => {
@@ -9,11 +11,14 @@ const Navbar = ({ currentUser }) => {
   return (
     <div className="NavBar">
       <h1>Welcome To StrungOut</h1>
-      {currentUser ? <Logout/> : <Login/>}
+      {currentUser ? <Logout/> : ''}
       {currentUser ? <h1>Welcome, {currentUser.attributes.name}!</h1> : ""}
-      <button> Log In </button>
-       or 
-      <button> Sign Up </button>
+      {currentUser ? "" :
+      <div style={{ borderBottom: '2px solid black', paddingBottom: '10px', marginBottom: '12px' }}>
+      <button> <NavLink style={{ marginRight: '10px' }} to="/login">Log In</NavLink></button>
+       or
+      <button> <NavLink style={{ marginRight: '10px' }} to="/signup">Sign Up</NavLink></button>
+      </div>}
 
     </div>  )
 }
