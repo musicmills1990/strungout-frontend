@@ -13,7 +13,13 @@ const Navbar = ({ currentUser }) => {
       <h1>Welcome To StrungOut</h1>
       {currentUser ? <Logout/> : ''}
       {currentUser ? <h1>Welcome, {currentUser.attributes.name}!</h1> : ""}
-      {currentUser ? "" :
+      {currentUser ?
+        <div style={{ borderBottom: '2px solid black', paddingBottom: '10px', marginBottom: '12px' }}>
+        <button> <NavLink style={{ marginRight: '10px' }} to="/guitars">My Guitars</NavLink></button>
+         or
+        <button> <NavLink style={{ marginRight: '10px' }} to="/stringpacks">My String Pack</NavLink></button>
+        </div>
+         :
       <div style={{ borderBottom: '2px solid black', paddingBottom: '10px', marginBottom: '12px' }}>
       <button> <NavLink style={{ marginRight: '10px' }} to="/login">Log In</NavLink></button>
        or
