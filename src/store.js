@@ -6,6 +6,8 @@ import loginForm from './reducers/loginForm.js'
 import signupForm from './reducers/signupForm.js'
 import myGuitars from './reducers/myGuitars.js'
 import myStringPacks from './reducers/myStringPacks.js'
+import newGuitarForm from './reducers/newGuitarForm.js'
+
 
 
 
@@ -15,7 +17,8 @@ const reducer = combineReducers({
   loginForm,
   myGuitars,
   myStringPacks,
-  signupForm
+  signupForm,
+  newGuitarForm
 })
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
