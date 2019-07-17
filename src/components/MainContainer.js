@@ -1,6 +1,4 @@
 import React from 'react'
-import MyGuitars from "./MyGuitars.js"
-import MyStringPacks from './MyStringPacks.js'
 
 const MainContainer = () => {
 
