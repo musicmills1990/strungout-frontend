@@ -2,7 +2,11 @@ const initialState = {
   name: "",
   email: "",
   address: "",
-  password: ""
+  password: "",
+  player_type: "",
+  plan: "",
+  pay_schedule: ""
+  
 }
 
 export default (state = initialState, action) => {
