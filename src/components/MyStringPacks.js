@@ -6,9 +6,10 @@ const MyStringPacks = (props) => {
   console.log(props)
   const stringPackCard = props.stringPacks.map(str => <StringPackCard stringPack={str} key={str.id}/>)
   return (
-    stringPackCard.length > 0 ? stringPackCard : null
+    stringPackCard.length > 0 ? stringPackCard : "Choose your set of strings!"
   )
 }
+
 
 
 const mapStateToProps = state => {
