@@ -6,8 +6,6 @@ const MainContainer = () => {
 
   return (
     <div className="MainContainer">
-    <MyGuitars/>
-    <MyStringPacks/>
     </div>
   )
 }
