@@ -24,16 +24,16 @@ const NewGuitar = ({myGuitarForm, newGuitar, updateGuitarForm }) => {
 
   return (
     <div className="guitar-form-parent">
-      <label>Register Your Guitar!</label>
+      <label><h2>Register Your Guitar!</h2></label>
         <div className="guitar-form-child">
         <form onSubmit={handleSubmit}>
-          <label>Accoustic or Electric?</label>
+          <label>Accoustic or Electric?</label><br/>
           <select placeholder="guitar_type" value={myGuitarForm.guitar_type} name="guitar_type" type="text" onChange={handleInputChange}>
             <option value="accoustic">Accoustic Guitar</option>
             <option value="electric">Electric Guitar</option>
-          </select>
-            <input placeholder="brand" value={myGuitarForm.brand} name="brand" type="text" onChange={handleInputChange}/>
-            <input placeholder="model" value={myGuitarForm.model} name="model" type="text" onChange={handleInputChange}/>
+          </select><br/>
+            <input placeholder="brand" value={myGuitarForm.brand} name="brand" type="text" onChange={handleInputChange}/><br/>
+            <input placeholder="model" value={myGuitarForm.model} name="model" type="text" onChange={handleInputChange}/><br/>
             <input placeholder="color" value={myGuitarForm.color} name="color" type="text" onChange={handleInputChange}/>
           <br/>
             <input type="submit" value="Register Your Guitar"/>

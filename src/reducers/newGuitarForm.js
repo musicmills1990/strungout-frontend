@@ -3,7 +3,6 @@ const initialState = {
   brand: "",
   model: "",
   color: "",
-  user_id: ""
 }
 
 export default (state = initialState, action) => {

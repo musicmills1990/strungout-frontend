@@ -5,7 +5,7 @@ export const updateGuitarForm = formData => {
   }
 }
 
-export const resetSignupForm = () => {
+export const resetGuitarForm = () => {
   return {
     type: "RESET_GUITAR_FORM",
   }

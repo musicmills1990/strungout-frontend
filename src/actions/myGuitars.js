@@ -1,3 +1,5 @@
+import { resetGuitarForm } from './newGuitarForm.js'
+
 export const setMyGuitars = guitars => {
   return {
     type: "SET_MY_GUITARS",
@@ -7,7 +9,7 @@ export const setMyGuitars = guitars => {
 
 
 export const getMyGuitars = () => {
-  return dispatch => {
+  return(dispatch) => {
   fetch("http://localhost:3001/api/v1/guitars",{
     credentials: "include",
     method: "GET",
@@ -27,21 +29,26 @@ export const getMyGuitars = () => {
   }
 }
 
-export const newGuitar = () => {
-  return dispatch => {
-  fetch("http://localhost:3001/api/v1/guitars",{
+export const newGuitar = (credentials) => {
+  const guitarInfo = {
+    guitars: credentials
+  }
+  return(dispatch) => {
+  fetch("http://localhost:3001/api/v1/guitars", {
     credentials: "include",
     method: "POST",
     headers: {
       "Content-Type": "appication/json"
-    }
+    },
+    body: JSON.stringify(guitarInfo)
   })
-    .then(r=> r.json())
-    .then(response => {
-      if (response.error) {
-        alert(response.error)
+    .then(r => r.json())
+    .then(guitarResponse => {
+      if (guitarResponse.errors) {
+        alert(guitarResponse.errors)
       } else {
-        dispatch(setMyGuitars(response.data))
+        dispatch(setMyGuitars(guitarResponse.data))
+        dispatch(resetGuitarForm())
       }
     })
     .catch(console.log)
