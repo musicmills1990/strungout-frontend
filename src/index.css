@@ -11,3 +11,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+div.LoggedOutHome {
+  color: navy;
+  width: 1000px;
+  font-family: serif;
+  font-size: 20px;
+}
+
+div.brokenStringMessage {
+  color: maroon;
+  width: 800px
+}
