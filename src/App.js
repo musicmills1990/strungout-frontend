@@ -9,6 +9,10 @@ import Signup from './components/Signup.js'
 import  MyGuitars from './components/MyGuitars'
 import  MyStringPack from './components/MyStringPacks'
 import UserAccount from './components/UserAccount'
+import BrokenStringContainer from './components/BrokenStringContainer'
+import BrokenStringMessage from './components/BrokenStringMessage'
+
+
 
 class App extends React.Component {
 
@@ -26,7 +30,9 @@ class App extends React.Component {
         <Route exact path='/guitars' component={MyGuitars}/>
         <Route exact path='/stringpacks' component={MyStringPack}/>
         <Route exact path='/account' component={UserAccount}/>
+        <Route exact path='/brokenStringMessage' component={BrokenStringMessage}/>
 
+        <BrokenStringContainer/>
         </div>
       </Router>
     );
