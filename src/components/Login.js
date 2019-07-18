@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { updateLoginForm } from '../actions/loginForm.js'
 import { login } from '../actions/currentUser.js'
-import { Route, Redirect } from 'react-router'
+// import { Route, Redirect } from 'react-router'
 
 
 
