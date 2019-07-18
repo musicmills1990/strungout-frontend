@@ -49,8 +49,8 @@ const Signup = ({signupForm, signup, updateSignupForm }) => {
       <select placeholder="pay_schedule" value={signupForm.pay_schedule} name="pay_schedule" type="text" onChange={handleInputChange}>
         <option value="monthly">Pay Month to Month</option>
         <option value="quarterly">Pay Quarterly (5% off!)</option>
-        <option value="practicer">Bi-Annual Payments (10% off!)</option>
-        <option value="practicer">Annual Payment(20% off!)</option>
+        <option value="bi-annual">Bi-Annual Payments (10% off!)</option>
+        <option value="annual">Annual Payment(20% off!)</option>
       </select>
       <input type="submit" value="Sign Up"/>
     </form>
