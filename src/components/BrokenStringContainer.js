@@ -11,12 +11,14 @@ const BrokenStringContainer = ({ currentUser }) => {
     <div className="BrokenStringHome">
     { currentUser ?
       <div className="LoggedInHome">
-        <button><NavLink style={{ marginTop: '10px' }} to="/brokenStringMessage">E</NavLink></button>
-        <button><NavLink style={{ marginTop: '10px' }} to="/brokenStringMessage">A</NavLink></button>
-        <button><NavLink style={{ marginTop: '10px' }} to="/brokenStringMessage">D</NavLink></button>
-        <button><NavLink style={{ marginTop: '10px' }} to="/brokenStringMessage">G</NavLink></button>
-        <button><NavLink style={{ marginTop: '10px' }} to="/brokenStringMessage">G</NavLink></button>
-        <button><NavLink style={{ marginTop: '10px' }} to="/brokenStringMessage">E</NavLink></button>
+      <h2>
+        <NavLink style={{ position: 'absolute', left: '216px', bottom: '250px' }} to="/brokenStringMessage">___</NavLink>
+        <NavLink style={{ position: 'absolute', left: '237px', bottom: '217px' }} to="/brokenStringMessage">___</NavLink>
+        <NavLink style={{position: 'absolute', left: '258px', bottom: '184px'}} to="/brokenStringMessage">___</NavLink>
+        <NavLink style={{position: 'absolute', left: '281px', bottom: '153px'}} to="/brokenStringMessage">___</NavLink>
+        <NavLink style={{position: 'absolute', left: '302px', bottom: '120px'}} to="/brokenStringMessage">___</NavLink>
+        <NavLink style={{position: 'absolute', left: '323px', bottom: '87px'}} to="/brokenStringMessage">___</NavLink>
+      </h2>
         <img src={BrokenStringGraphic} alt="Choose your broken guitar string" width="600" height="600"/>
       </div>
       :

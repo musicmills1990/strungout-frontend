@@ -1,10 +1,12 @@
 import React from 'react'
+import BrokenStringMessageGraphic from '../brokenStringMessageGraphic.png'
 
 
 const BrokenStringMessage = () => {
   return (
     <div className="brokenStringMessage">
     <h3>Ach! Sorry your string broke, but we've got you covered!</h3>
+    <img src={BrokenStringMessageGraphic} alt="Sorry your string broke!" width="600" height="240"/>
     <p>We're sending a new
     ~stringpack.chosenString~ string to:
 

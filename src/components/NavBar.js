@@ -14,15 +14,19 @@ const Navbar = ({ currentUser }) => {
       {currentUser ? <h1>Welcome, {currentUser.attributes.name}!</h1> : ""}
       {currentUser ?
         <div style={{ borderBottom: '2px solid black', paddingBottom: '10px', marginBottom: '12px' }}>
-        <button><NavLink style={{ marginRight: '10px' }} to="/guitars">My Guitars</NavLink></button>
-        <button><NavLink style={{ marginRight: '10px' }} to="/stringpacks">My String Pack</NavLink></button>
-        <button><NavLink style={{ marginRight: '10px' }} to="/account">My Account</NavLink></button>
+        <h2>
+        <NavLink className="Nav-Link" style={{ marginRight: '10px' }} to="/">Broken String</NavLink>
+        <NavLink className="Nav-Link" style={{ marginRight: '10px' }} to="/guitars">My Guitars</NavLink>
+        <NavLink className="Nav-Link" style={{ marginRight: '10px' }} to="/stringpacks">My String Pack</NavLink>
+        <NavLink className="Nav-Link" style={{ marginRight: '10px' }} to="/account">My Account</NavLink>
+        </h2>
         </div>
          :
       <div style={{ borderBottom: '2px solid black', paddingBottom: '10px', marginBottom: '12px' }}>
-      <button> <NavLink style={{ marginRight: '10px' }} to="/login">Log In</NavLink></button>
+      <h2>
+       <NavLink className="Nav-Link" style={{ marginRight: '10px' }} to="/login">Log In</NavLink>
        or
-      <button> <NavLink style={{ marginRight: '10px' }} to="/signup">Sign Up</NavLink></button>
+       <NavLink className="Nav-Link" style={{ marginLeft: '10px' }} to="/signup">Sign Up</NavLink></h2>
       </div>}
 
     </div>  )
