@@ -1,6 +1,5 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import Login from "./Login.js"
 import Logout from "./Logout.js"
 import { NavLink } from 'react-router-dom';
 
