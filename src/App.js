@@ -31,7 +31,6 @@ class App extends React.Component {
         <Route exact path='/stringpacks' component={MyStringPack}/>
         <Route exact path='/account' component={UserAccount}/>
         <Route exact path='/brokenStringMessage' component={BrokenStringMessage}/>
-
         <BrokenStringContainer/>
         </div>
       </Router>
