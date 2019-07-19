@@ -1,5 +1,5 @@
 const initialState = {
-  guage: "",
+  guage: "custom-light",
   brand: "",
   model: "",
   price: "",
