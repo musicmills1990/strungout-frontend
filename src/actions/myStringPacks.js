@@ -29,7 +29,7 @@ export const getMyStringPacks = () => {
   }
 }
 
-export const updateStrings = (credentials) => {
+export const updateBrokenString = (credentials) => {
   const stringPackInfo = {
     stringpacks: credentials
   }
