@@ -1,5 +1,5 @@
 const initialState = {
-  guitar_type: "",
+  guitar_type: "accoustic",
   brand: "",
   model: "",
   color: "",
