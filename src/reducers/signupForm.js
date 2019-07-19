@@ -3,10 +3,10 @@ const initialState = {
   email: "",
   address: "",
   password: "",
-  player_type: "",
-  plan: "",
-  pay_schedule: ""
-  
+  player_type: "practicer",
+  plan: "basic",
+  pay_schedule: "monthly"
+
 }
 
 export default (state = initialState, action) => {
