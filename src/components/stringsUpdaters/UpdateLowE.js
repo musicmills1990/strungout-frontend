@@ -1,14 +1,31 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { updateStrings } from '../../actions/myStringPacks.js'
+import { updateBrokenString } from '../../actions/myStringPacks.js'
 
-const UpdateLowE = ({ updateStrings }) => {
+const UpdateLowE = ({ updateBrokenString, myStringPacks }) => {
+
+const handleSubmit = event => {
+  event.preventDefault()
+  let currentStringCount = myStringPacks[0].attributes.low_e_string_counter
+    const updateStringInfo = {
+      ...myStringPacks[0].attributes,
+      low_e_string_counter: currentStringCount +=1
+    }
+  updateBrokenString(updateStringInfo)
+  }
 
   return (
-    <form onSubmit={updateStrings}>
+    <form onSubmit={handleSubmit}>
     <input type="submit" value="Low E"/>
     </form>
   )
 }
 
-export default connect(null, { updateStrings })(UpdateLowE)
+const mapStateToProps = state => {
+  return {
+    myStringPacks: state.myStringPacks
+  }
+}
+
+
+export default connect(mapStateToProps, { updateBrokenString })(UpdateLowE)

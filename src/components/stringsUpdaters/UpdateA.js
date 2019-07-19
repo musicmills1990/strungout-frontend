@@ -1,8 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { updateStrings } from '../../actions/myStringPacks.js'
+import { updateBrokenString } from '../../actions/myStringPacks.js'
 
-const UpdateA = ({ updateStrings, myStringPacks }) => {
+const UpdateA = ({ updateBrokenString, myStringPacks }) => {
 
 const handleSubmit = event => {
   event.preventDefault()
@@ -11,7 +11,7 @@ const handleSubmit = event => {
       ...myStringPacks[0].attributes,
       a_string_counter: currentStringCount +=1
     }
-  updateStrings(updateStringInfo)
+  updateBrokenString(updateStringInfo)
   }
 
   return (
@@ -28,4 +28,4 @@ const mapStateToProps = state => {
 }
 
 
-export default connect(mapStateToProps, { updateStrings })(UpdateA)
+export default connect(mapStateToProps, { updateBrokenString })(UpdateA)
