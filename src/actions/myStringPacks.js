@@ -30,8 +30,29 @@ export const getMyStringPacks = () => {
 }
 
 export const updateStrings = (credentials) => {
-  debugger
-  return(console.log(credentials))
+  const stringPackInfo = {
+    stringpacks: credentials
+  }
+  return(dispatch) => {
+  fetch("http://localhost:3001/api/v1/string_packs/1", {
+    credentials: "include",
+    method: "PATCH",
+    headers: {
+      "Content-Type": "appication/json"
+    },
+    body: JSON.stringify(stringPackInfo)
+  })
+    .then(r => r.json())
+    .then(stringPackResp => {
+      if (stringPackResp.errors) {
+        alert(stringPackResp.errors)
+      } else {
+        dispatch(setMyStringPacks(stringPackResp.data))
+        dispatch(resetStringPackForm())
+      }
+    })
+    .catch(console.log)
+  }
 }
 
 
