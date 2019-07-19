@@ -27,7 +27,7 @@ const NewStringPack = ({newStringPackForm, newStringPack, updateStringPackForm }
       <label><h2>Choose your Strings!</h2></label>
         <div className="string-packs-form-child">
         <form onSubmit={handleSubmit}>
-          <label>Accoustic or Electric?</label><br/>
+          <label>String gauge (thickness):</label><br/>
           <select placeholder="gauge" value={newStringPackForm.gauge} name="gauge" type="text" onChange={handleInputChange}>
             <option value="custom-light">Custom Light</option>
             <option value="light">Light</option>
