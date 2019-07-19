@@ -6,18 +6,17 @@ const UpdateA = ({ updateStrings, myStringPacks }) => {
 
 const handleSubmit = event => {
   event.preventDefault()
-  const { name, value } = event.target
+  let currentStringCount = myStringPacks[0].attributes.a_string_counter
     const updateStringInfo = {
-      ...myStringPacks,
-      [name]: value
+      ...myStringPacks[0].attributes,
+      a_string_counter: currentStringCount +=1
     }
-    debugger
-  updateStrings()
+  updateStrings(updateStringInfo)
   }
 
   return (
     <form onSubmit={handleSubmit}>
-    <input type="submit" name="A" value="A"/>
+    <input type="submit" value="A"/>
     </form>
   )
 }
