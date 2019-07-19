@@ -29,6 +29,12 @@ export const getMyStringPacks = () => {
   }
 }
 
+export const updateStrings = (credentials) => {
+  debugger
+  return(console.log(credentials))
+}
+
+
 export const newStringPack = (credentials) => {
   const stringPackInfo = {
     stringpacks: credentials
