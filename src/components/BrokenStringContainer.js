@@ -4,6 +4,12 @@ import { connect } from 'react-redux'
 import BrokenStringGraphic from '../brokenStringGuitarGraphic.png'
 import LoggedOutGuitarGraphic from '../loggedOutGuitarGraphic.png'
 import { NavLink } from 'react-router-dom';
+import UpdateLowE from './stringsUpdaters/UpdateLowE'
+import UpdateA from './stringsUpdaters/UpdateA'
+import UpdateD from './stringsUpdaters/UpdateD'
+import UpdateG from './stringsUpdaters/UpdateG'
+import UpdateB from './stringsUpdaters/UpdateB'
+import UpdateHighE from './stringsUpdaters/UpdateHighE'
 
 
 const BrokenStringContainer = ({ currentUser }) => {
@@ -12,14 +18,21 @@ const BrokenStringContainer = ({ currentUser }) => {
     { currentUser ?
       <div className="LoggedInHome">
       <h2>
-        <NavLink style={{ position: 'absolute', left: '216px', bottom: '250px' }} to="/brokenStringMessage">___</NavLink>
-        <NavLink style={{ position: 'absolute', left: '237px', bottom: '217px' }} to="/brokenStringMessage">___</NavLink>
-        <NavLink style={{position: 'absolute', left: '258px', bottom: '184px'}} to="/brokenStringMessage">___</NavLink>
-        <NavLink style={{position: 'absolute', left: '281px', bottom: '153px'}} to="/brokenStringMessage">___</NavLink>
-        <NavLink style={{position: 'absolute', left: '302px', bottom: '120px'}} to="/brokenStringMessage">___</NavLink>
-        <NavLink style={{position: 'absolute', left: '323px', bottom: '87px'}} to="/brokenStringMessage">___</NavLink>
+        <NavLink style={{ position: 'absolute', left: '216px', bottom: '237px' }} to="/brokenStringMessage">___</NavLink>
+        <NavLink style={{ position: 'absolute', left: '237px', bottom: '204px' }} to="/brokenStringMessage">___</NavLink>
+        <NavLink style={{position: 'absolute', left: '258px', bottom: '171px'}} to="/brokenStringMessage">___</NavLink>
+        <NavLink style={{position: 'absolute', left: '281px', bottom: '140px'}} to="/brokenStringMessage">___</NavLink>
+        <NavLink style={{position: 'absolute', left: '302px', bottom: '107px'}} to="/brokenStringMessage">___</NavLink>
+        <NavLink style={{position: 'absolute', left: '323px', bottom: '74px'}} to="/brokenStringMessage">___</NavLink>
       </h2>
         <img src={BrokenStringGraphic} alt="Choose your broken guitar string" width="600" height="600"/>
+        <h5>Under Development:</h5>
+        <UpdateLowE/>
+        <UpdateA/>
+        <UpdateD/>
+        <UpdateG/>
+        <UpdateB/>
+        <UpdateHighE/>
       </div>
       :
       <div className="LoggedOutHome">
@@ -47,3 +60,6 @@ const mapStateToProps = ({ currentUser}) => {
 }
 
 export default connect(mapStateToProps)(BrokenStringContainer)
+
+//these Navlinks should be buttons that first send a PATCH request to some stringPacks controller that increases
+//the cooresponding string's stringcount, THEN it calls a redirect or navlink to brokenstringmessage component
