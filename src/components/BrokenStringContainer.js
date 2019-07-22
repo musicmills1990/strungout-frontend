@@ -11,19 +11,26 @@ import UpdateG from './stringsUpdaters/UpdateG'
 import UpdateB from './stringsUpdaters/UpdateB'
 import UpdateHighE from './stringsUpdaters/UpdateHighE'
 
+const isCurrentUserEmpty = (obj) => {
+  for(let key in obj) {
+    if(obj.hasOwnProperty(key))
+      return false;
+    }
+    return true;
+}
 
 const BrokenStringContainer = ({ currentUser }) => {
   return (
     <div className="BrokenStringHome">
-    { currentUser ?
+    { !isCurrentUserEmpty(currentUser) ?
       <div className="LoggedInHome">
       <h2>
-        <NavLink style={{ position: 'absolute', left: '216px', bottom: '237px' }} to="/brokenStringMessage">___</NavLink>
-        <NavLink style={{ position: 'absolute', left: '237px', bottom: '204px' }} to="/brokenStringMessage">___</NavLink>
-        <NavLink style={{position: 'absolute', left: '258px', bottom: '171px'}} to="/brokenStringMessage">___</NavLink>
-        <NavLink style={{position: 'absolute', left: '281px', bottom: '140px'}} to="/brokenStringMessage">___</NavLink>
-        <NavLink style={{position: 'absolute', left: '302px', bottom: '107px'}} to="/brokenStringMessage">___</NavLink>
-        <NavLink style={{position: 'absolute', left: '323px', bottom: '74px'}} to="/brokenStringMessage">___</NavLink>
+        <NavLink style={{ position: 'absolute', left: '216px', bottom: '297px' }} to="/brokenStringMessage">___</NavLink>
+        <NavLink style={{ position: 'absolute', left: '237px', bottom: '264px' }} to="/brokenStringMessage">___</NavLink>
+        <NavLink style={{position: 'absolute', left: '258px', bottom: '231px'}} to="/brokenStringMessage">___</NavLink>
+        <NavLink style={{position: 'absolute', left: '281px', bottom: '200px'}} to="/brokenStringMessage">___</NavLink>
+        <NavLink style={{position: 'absolute', left: '302px', bottom: '167px'}} to="/brokenStringMessage">___</NavLink>
+        <NavLink style={{position: 'absolute', left: '323px', bottom: '134px'}} to="/brokenStringMessage">___</NavLink>
       </h2>
         <img src={BrokenStringGraphic} alt="Choose your broken guitar string" width="600" height="600"/>
         <h5>Under Development:</h5>
@@ -38,8 +45,8 @@ const BrokenStringContainer = ({ currentUser }) => {
       <div className="LoggedOutHome">
       <img src={LoggedOutGuitarGraphic} alt="Welcoming guitar" width="600" height="220"/>
         <p><strong>Open any guitarist's case in the world.</strong> Whether they gig regularly or jam in their basement,
-        the scene is usually the same: there’s 8 extra low E strings, 5 A strings, 1 D string, and they’re
-        all out of B strings. Why? Simple - strings come cheapest in full packs of 6, but certain strings break
+        the scene is usually the same: there are 8 extra low E strings, 5 A strings, 1 D string, out of B strings...
+        Why? Simple - strings come cheapest in full packs of 6, but certain strings break
         way more than others due to various factors: tensile strength, thickness, temperature and humidity, etc.
         Add swapping strings with other musicians to survive a gig before you have time to run to the store,
         and now you have different brands, different coatings, and different gauged strings on your guitar,
