@@ -25,8 +25,8 @@ class App extends React.Component {
       <Router>
         <div>
         <NavBar/>
-        <Route exact path='/login' component={Login}/>
-        <Route exact path='/signup' component={Signup}/>
+        <Route exact path='/login' render={({history})=><Login history={history}/>}/>
+        <Route exact path='/signup' render={({history})=><Signup history={history}/>}/>
         <Route exact path='/guitars' component={MyGuitars}/>
         <Route exact path='/stringpacks' component={MyStringPack}/>
         <Route exact path='/account' component={UserAccount}/>
