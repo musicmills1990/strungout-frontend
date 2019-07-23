@@ -14,7 +14,7 @@ export const getMyStringPacks = () => {
     credentials: "include",
     method: "GET",
     headers: {
-      "Content-Type": "appication/json"
+      "Content-Type": "application/json"
     }
   })
     .then(r => r.json())
@@ -38,7 +38,8 @@ export const updateBrokenString = (credentials) => {
     credentials: "include",
     method: "PATCH",
     headers: {
-      "Content-Type": "appication/json"
+      "Content-Type": "application/json",
+      "Accept": "application/json"
     },
     body: JSON.stringify(stringPackInfo)
   })
@@ -57,24 +58,27 @@ export const updateBrokenString = (credentials) => {
 
 
 export const newStringPack = (credentials) => {
-  const stringPackInfo = {
-    stringpacks: credentials
+
+  const newstringPackInfo = {
+    stringpack: credentials
   }
+
   return(dispatch) => {
   fetch("http://localhost:3001/api/v1/string_packs", {
     credentials: "include",
     method: "POST",
     headers: {
-      "Content-Type": "appication/json"
+      "Content-Type": "application/json",
+      "Accept": "application/json"
     },
-    body: JSON.stringify(stringPackInfo)
+    body: JSON.stringify(newstringPackInfo)
   })
     .then(r => r.json())
     .then(stringPackResp => {
       if (stringPackResp.errors) {
         alert(stringPackResp.errors)
       } else {
-        dispatch(setMyStringPacks(stringPackResp.data))
+        dispatch(getMyStringPacks(stringPackResp.data))
         dispatch(resetStringPackForm())
       }
     })
