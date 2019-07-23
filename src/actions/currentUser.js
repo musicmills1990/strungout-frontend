@@ -17,7 +17,8 @@ export const clearCurrentUser = () => {
 
 }
 
-export const signup = (credentials) => {
+export const signup = (credentials, history) => {
+
   const userInfo = {
     user: credentials
   }
@@ -39,6 +40,7 @@ export const signup = (credentials) => {
             dispatch(resetSignupForm())
             dispatch(getMyGuitars())
             dispatch(getMyStringPacks())
+            history.push('/')
           }
         })
         .catch(console.log)
@@ -46,7 +48,7 @@ export const signup = (credentials) => {
 }
 
 
-export const login = (credentials) => {
+export const login = (credentials, history) => {
   return(dispatch) => {
       return fetch('http://localhost:3001/api/v1/login', {
         credentials: "include",
@@ -65,12 +67,13 @@ export const login = (credentials) => {
             dispatch(resetLoginForm())
             dispatch(getMyGuitars())
             dispatch(getMyStringPacks())
+            history.push('/')
           }
         })
         .catch(console.log)
   }
 }
-export const logout = (credentials) => {
+export const logout = () => {
   return dispatch => {
     dispatch(clearCurrentUser())
     return fetch("http://localhost:3001/api/v1/logout", {
