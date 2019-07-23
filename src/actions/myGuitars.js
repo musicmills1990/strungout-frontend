@@ -31,14 +31,14 @@ export const getMyGuitars = () => {
 
 export const newGuitar = (credentials) => {
   const guitarInfo = {
-    guitars: credentials
+    guitar: credentials
   }
   return(dispatch) => {
   fetch("http://localhost:3001/api/v1/guitars", {
-    credentials: "include",
     method: "POST",
     headers: {
-      "Content-Type": "appication/json"
+      "Content-Type": "application/json",
+      "Accept": "application/json"
     },
     body: JSON.stringify(guitarInfo)
   })
@@ -47,7 +47,7 @@ export const newGuitar = (credentials) => {
       if (guitarResponse.errors) {
         alert(guitarResponse.errors)
       } else {
-        dispatch(setMyGuitars(guitarResponse.data))
+        dispatch(getMyGuitars(guitarResponse.data))
         dispatch(resetGuitarForm())
       }
     })
