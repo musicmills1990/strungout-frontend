@@ -5,7 +5,7 @@ import { signup } from '../actions/currentUser.js'
 
 
 
-const Signup = ({signupForm, signup, updateSignupForm }) => {
+const Signup = ({signupForm, signup, updateSignupForm, history }) => {
 
 
   const handleInputChange = event => {
@@ -19,7 +19,7 @@ const Signup = ({signupForm, signup, updateSignupForm }) => {
 
   const handleSubmit = event => {
     event.preventDefault()
-    signup(signupForm)
+    signup(signupForm, history)
   }
 
   return (
