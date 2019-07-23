@@ -4,8 +4,16 @@ import { updateStringPackForm } from '../actions/newStringPackForm.js'
 import { newStringPack } from '../actions/myStringPacks.js'
 
 
+const isCurrentUserEmpty = (obj) => {
+  for(let key in obj) {
+    if(obj.hasOwnProperty(key))
+      return false;
+    }
+    return true;
+}
 
-const NewStringPack = ({newStringPackForm, newStringPack, updateStringPackForm }) => {
+
+const NewStringPack = ({newStringPackForm, newStringPack, updateStringPackForm, currentUser }) => {
 
 
   const handleInputChange = event => {
@@ -17,12 +25,18 @@ const NewStringPack = ({newStringPackForm, newStringPack, updateStringPackForm }
     updateStringPackForm(updateFormInfo)
   }
 
+  const myUserId = {
+    ...newStringPackForm,
+    user_id: currentUser.id
+  }
+
   const handleSubmit = event => {
     event.preventDefault()
-    newStringPack(newStringPackForm)
+    newStringPack(myUserId)
   }
 
   return (
+    !isCurrentUserEmpty(currentUser) ?
     <div className="string-packs-form-parent">
       <label><h2>Choose your Strings!</h2></label>
         <div className="string-packs-form-child">
@@ -41,12 +55,17 @@ const NewStringPack = ({newStringPackForm, newStringPack, updateStringPackForm }
         </form>
       </div>
     </div>
+    :
+    <div className="logged-out-message">
+    <h3>You must be logged in to add a new string pack. Login or Signup!</h3>
+    </div>
   )
 }
 
 const mapStateToProps = (state) => {
   return {
-    newStringPackForm: state.newStringPackForm
+    newStringPackForm: state.newStringPackForm,
+    currentUser: state.currentUser
   }
 }
 
