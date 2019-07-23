@@ -5,8 +5,7 @@ import { newGuitar } from '../actions/myGuitars.js'
 
 
 
-const NewGuitar = ({myGuitarForm, newGuitar, updateGuitarForm }) => {
-
+const NewGuitar = ({myGuitarForm, newGuitar, updateGuitarForm, currentUser }) => {
 
   const handleInputChange = event => {
     const { name, value } = event.target
@@ -17,9 +16,14 @@ const NewGuitar = ({myGuitarForm, newGuitar, updateGuitarForm }) => {
     updateGuitarForm(updateFormInfo)
   }
 
+  const myUserId = {
+    ...myGuitarForm,
+    user_id: currentUser.id
+  }
+
   const handleSubmit = event => {
     event.preventDefault()
-    newGuitar(myGuitarForm)
+    newGuitar(myUserId)
   }
 
   return (
@@ -45,7 +49,8 @@ const NewGuitar = ({myGuitarForm, newGuitar, updateGuitarForm }) => {
 
 const mapStateToProps = (state) => {
   return {
-    myGuitarForm: state.newGuitarForm
+    myGuitarForm: state.newGuitarForm,
+    currentUser: state.currentUser
   }
 }
 
