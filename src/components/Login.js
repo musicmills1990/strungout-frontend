@@ -6,7 +6,7 @@ import { login } from '../actions/currentUser.js'
 
 
 
-const Login = ({loginForm, login, updateLoginForm }) => {
+const Login = ({loginForm, login, updateLoginForm, history }) => {
 
   const handleInputChange = event => {
     const { name, value } = event.target
@@ -20,7 +20,7 @@ const Login = ({loginForm, login, updateLoginForm }) => {
 
   const handleSubmit = event => {
     event.preventDefault()
-    login(loginForm);
+    login(loginForm, history);
     //I want to redirect to the root URL after it successfully logs in.//
   }
 
