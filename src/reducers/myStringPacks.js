@@ -2,7 +2,7 @@ const initialState = {
   low_e_string_counter: 0,
   a_string_counter: 0,
   d_string_counter: 0,
-  g_string_counter: 1,
+  g_string_counter: 0,
   b_string_counter: 0,
   high_e_string_counter: 0,
   guage: "",
