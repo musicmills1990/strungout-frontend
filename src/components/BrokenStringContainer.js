@@ -50,7 +50,7 @@ const BrokenStringContainer = ({ currentUser }) => {
         way more than others due to various factors: tensile strength, thickness, temperature and humidity, etc.
         Add swapping strings with other musicians to survive a gig before you have time to run to the store,
         and now you have different brands, different coatings, and different gauged strings on your guitar,
-        which can affect your guitar's neck over the longterm.</p>
+        which can have long term effects on your guitar's fretboard.</p>
 
         <p><strong>Introducing Strung Out - </strong>a monthly membership service for the amateur to professional guitarist.
         Every time a string breaks, just open the app and click the cooresponding string and we'll mail you a new one.

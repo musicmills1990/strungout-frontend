@@ -33,9 +33,10 @@ export const updateBrokenString = (credentials) => {
   const stringPackInfo = {
     stringpacks: credentials
   }
+  debugger
+
   return(dispatch) => {
-  fetch("http://localhost:3001/api/v1/string_packs/1", {
-    credentials: "include",
+  fetch(`http://localhost:3001/api/v1/string_packs/1`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",

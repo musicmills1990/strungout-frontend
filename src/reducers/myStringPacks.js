@@ -8,7 +8,7 @@ const initialState = {
   guage: "",
   brand: "",
   model: "",
-  price: ""
+  price: "",
 }
 
 export default (state = initialState, action) => {

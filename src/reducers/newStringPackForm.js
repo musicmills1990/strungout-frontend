@@ -3,6 +3,7 @@ const initialState = {
   brand: "",
   model: "",
   price: "",
+  user_id: ""
 }
 
 export default (state = initialState, action) => {
