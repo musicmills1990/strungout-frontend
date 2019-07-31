@@ -20,7 +20,7 @@ export const getMyStringPacks = () => {
     .then(r => r.json())
     .then(response => {
       if (response.error) {
-        alert(response.error)
+        throw new Error(response.error)
       } else {
         dispatch(setMyStringPacks(response.data))
       }
@@ -59,30 +59,32 @@ export const updateBrokenString = (credentials) => {
 
 
 export const newStringPack = (credentials) => {
-
+  console.log("c")
   const newstringPackInfo = {
     stringpack: credentials
   }
 
   return(dispatch) => {
-  fetch("http://localhost:3001/api/v1/string_packs", {
-    credentials: "include",
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "Accept": "application/json"
-    },
-    body: JSON.stringify(newstringPackInfo)
-  })
-    .then(r => r.json())
-    .then(stringPackResp => {
-      if (stringPackResp.errors) {
-        alert(stringPackResp.errors)
-      } else {
-        dispatch(getMyStringPacks(stringPackResp.data))
-        dispatch(resetStringPackForm())
-      }
+    fetch("http://localhost:3001/api/v1/string_packs", {
+      credentials: "include",
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify(newstringPackInfo)
     })
-    .catch(console.log)
+      .then(r => r.json())
+      .then(stringPackResp => {
+        if (stringPackResp.errors) {
+          alert(stringPackResp.errors)
+        } else {
+          console.log("d")
+          dispatch(getMyStringPacks(stringPackResp.data))
+          dispatch(resetStringPackForm())
+        }
+      })
+      .catch(console.log)
   }
+  console.log("e")
 }

@@ -33,13 +33,6 @@ const BrokenStringContainer = ({ currentUser }) => {
         <NavLink style={{position: 'absolute', left: '323px', bottom: '134px'}} to="/brokenStringMessage">___</NavLink>
       </h2>
         <img src={BrokenStringGraphic} alt="Choose your broken guitar string" width="600" height="600"/>
-        <h5>Under Development:</h5>
-        <UpdateLowE/>
-        <UpdateA/>
-        <UpdateD/>
-        <UpdateG/>
-        <UpdateB/>
-        <UpdateHighE/>
       </div>
       :
       <div className="LoggedOutHome">
@@ -70,3 +63,10 @@ export default connect(mapStateToProps)(BrokenStringContainer)
 
 //these Navlinks should be buttons that first send a PATCH request to some stringPacks controller that increases
 //the cooresponding string's stringcount, THEN it calls a redirect or navlink to brokenstringmessage component
+// <h5>Under Development:</h5>
+// <UpdateLowE/>
+// <UpdateA/>
+// <UpdateD/>
+// <UpdateG/>
+// <UpdateB/>
+// <UpdateHighE/>

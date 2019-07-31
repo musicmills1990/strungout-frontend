@@ -32,7 +32,9 @@ const NewStringPack = ({newStringPackForm, newStringPack, updateStringPackForm, 
 
   const handleSubmit = event => {
     event.preventDefault()
+    console.log("a")
     newStringPack(myUserId)
+    console.log("b")
   }
 
   return (
