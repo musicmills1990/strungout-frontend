@@ -3,6 +3,8 @@ import GuitarCardLiveCode from './GuitarCardLiveCode.js'
 
 class MyGuitarsLiveCode extends React.Component {
 
+guitarArray = []
+
 constructor(){
   super()
   this.state = {
@@ -36,13 +38,13 @@ constructor(){
 
   sendGuitarInfo(attributes){
     const guitars = [];
-    let guitarArray = {
+    let newGuitarArray = {
       ...guitars,
       attributes,
       id: Math.floor((Math.random() * 100) + 1),
       type: 'guitar'
     }
-    return guitarArray
+    this.guitarArray.push(newGuitarArray)
   }
 
 
@@ -66,20 +68,19 @@ render(){
               <br/>
                 <input type="submit" value="Register Your Guitar"/>
             </form>
-
-
       </div>
     )
   }
 }
-
-  // const mapStateToProps = state => {
-  //   return {
-  //     guitars: state.myGuitars
-  //   }
-  // }
-
 export default (MyGuitarsLiveCode)
+
+
+// const mapStateToProps = state => {
+//   return {
+//     guitars: state.myGuitars
+//   }
+// }
+
 
 // connect(mapStateToProps)
 
