@@ -42,21 +42,18 @@ constructor(props){
 render(){
   let guitarInfo = {
     ...this.state.info,
-    id: Math.floor((Math.random() + 1)),
+    id: Math.floor((Math.random() * 1000 )+ 1),
     type: "guitar"
   }
   const newGuitar = [guitarInfo]
   const guitarCardLiveCode = newGuitar.map(g => <GuitarCardLiveCode guitar={g} key= {g.id}/>)
-
     return (
       <div>
       <h1>Your Guitars:</h1>
         <ul>
-          {guitarCardLiveCode}
+          {this.guitarCardLiveCode}
           {JSON.stringify(newGuitar)}
-
-
-      </ul>
+        </ul>
             <form id="guitar-form" onSubmit={this.handleSubmit}>
               <label>Accoustic or Electric?</label><br/>
               <select placeholder="guitar_type" value={this.state.guitar_type} onChange={this.handleOnChange} name="guitar_type" type="text">
