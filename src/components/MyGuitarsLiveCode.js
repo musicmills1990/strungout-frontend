@@ -3,8 +3,8 @@ import GuitarCardLiveCode from './GuitarCardLiveCode.js'
 
 class MyGuitarsLiveCode extends React.Component {
 
-constructor(props){
-  super(props)
+constructor(){
+  super()
   this.state = {
     guitar_type: 'accoustic',
     brand: '',
@@ -34,26 +34,25 @@ constructor(props){
     })
   }
 
-  sendGuitarInfo(info){
-    this.setState({info})
+  sendGuitarInfo(attributes){
+    const guitars = [];
+    let guitarArray = {
+      ...guitars,
+      attributes,
+      id: Math.floor((Math.random() * 100) + 1),
+      type: 'guitar'
+    }
+    return guitarArray
   }
 
 
 render(){
-
-  let guitarInfo = {
-    ...this.state.info,
-    id: Math.floor((Math.random() * 1000 )+ 1),
-    type: "guitar"
-  }
-  const newGuitar = [guitarInfo]
-  const guitarCardLiveCode = newGuitar.map(g => <GuitarCardLiveCode guitar={g} key= {g.id}/>)
+  const guitarCardLiveCode = this.guitarArray.map(g => <GuitarCardLiveCode guitar={g} key={g.id}/>)
     return (
       <div>
       <h1>Your Guitars:</h1>
         <ul>
-          {this.guitarCardLiveCode}
-          {JSON.stringify(newGuitar)}
+        {guitarCardLiveCode.length > 0 ? guitarCardLiveCode : null}
         </ul>
             <form id="guitar-form" onSubmit={this.handleSubmit}>
               <label>Accoustic or Electric?</label><br/>
@@ -87,3 +86,6 @@ export default (MyGuitarsLiveCode)
 // const guitarCardLiveCode = guitarInfo.map(g => <GuitarCardLiveCode guitar={g}/>)
 // {guitarCardLiveCode.length > 0 ? guitarCardLiveCode : ''}
 // {JSON.stringify(newGuitar)}
+
+// maybe I need the initial state to just be an empty array....
+//think about how the reducer spreads the empty array and adds whatever has come into it for your sendGuitarInfo function
