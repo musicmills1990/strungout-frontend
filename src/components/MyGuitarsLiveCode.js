@@ -40,6 +40,7 @@ constructor(props){
 
 
 render(){
+
   let guitarInfo = {
     ...this.state.info,
     id: Math.floor((Math.random() * 1000 )+ 1),
